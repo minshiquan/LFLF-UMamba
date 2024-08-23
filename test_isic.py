@@ -22,7 +22,7 @@ import cv2
 import random
 import os
 from networks.bra_unet import BRAUnet
-from model.LFEM import get_swin_umamba_from_plans
+from model.LFEM import get_lfle_umamba_from_plans
 class IoU(nn.Module):
     def __init__(self, weight=None, size_average=True):
         super(IoU, self).__init__()
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     print(len(test_files))
     test_dataset = binary_class(args.dataset,test_files, get_transform())
     #model_ft = BRAUnet(img_size=256,in_chans=3, num_classes=1, n_win=8)
-    model_ft = get_swin_umamba_d_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=3)
+    model_ft = get_lfle_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=3,out_chans=2)
 
     model_w = torch.load(args.model)
     model_ft.load_state_dict(model_w)
