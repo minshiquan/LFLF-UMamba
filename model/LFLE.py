@@ -529,7 +529,7 @@ class VSSMEncoder(nn.Module):
         return x_ret
 
 
-class SwinUMamba(nn.Module):
+class LFLEUMamba(nn.Module):
     def __init__(
         self,
         in_chans=1,
@@ -750,20 +750,21 @@ def load_pretrained_ckpt(
     return model
 
 
-def get_swin_umamba_from_plans(
+def get_lfle_umamba_from_plans(
     plans_manager: {},
     dataset_json: dict,
     configuration_manager: {},
     num_input_channels: int,
     deep_supervision: bool = False,
-    use_pretrain: bool = True
+    use_pretrain: bool = True,
+    out_chans: int = 1
 ):
     
     #label_manager = plans_manager.get_label_manager(dataset_json)
 
-    model = SwinUMamba(
+    model = LFLEUMamba(
         in_chans=num_input_channels,
-        out_chans=4,
+        out_chans=out_chans,
         feat_size=[48, 96, 192, 384, 768],
         deep_supervision=deep_supervision,
         hidden_size=768,
