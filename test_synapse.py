@@ -18,8 +18,9 @@ import torch.backends.cudnn as cudnn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
+
 from synapse_train_test.datasets.dataset_synapse import Synapse_dataset
-from model.LFLE.get_lfle_umamba_from_plans import LFLEUMamba
+from model.LFLE import get_lfle_umamba_from_plans
 from utils import test_single_volume
 
 parser = argparse.ArgumentParser()
@@ -138,7 +139,7 @@ if __name__ == "__main__":
     args.z_spacing = dataset_config[dataset_name]["z_spacing"]
     args.is_pretrain = True
 
-    net = BRAUnet(img_size=224,in_chans=3, num_classes=9, n_win=7).cuda(0)
+    net = get_lfle_umamba_from_plans(plan_manager={},dataset_manager={},num_input_channels=1,out_chans=args.num_classes)
 
     snapshot = os.path.join(args.output_dir, "best_model.pth")
     if not os.path.exists(snapshot):
