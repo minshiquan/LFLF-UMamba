@@ -139,7 +139,7 @@ if __name__ == "__main__":
     args.z_spacing = dataset_config[dataset_name]["z_spacing"]
     args.is_pretrain = True
 
-    net = get_lfle_umamba_from_plans(plan_manager={},dataset_manager={},num_input_channels=1,out_chans=args.num_classes)
+    net = get_lfle_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1,out_chans=args.num_classes)
 
     snapshot = os.path.join(args.output_dir, "best_model.pth")
     if not os.path.exists(snapshot):
