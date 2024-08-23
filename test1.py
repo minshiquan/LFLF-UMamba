@@ -19,7 +19,7 @@ from acdc_train_test.acdc_synapse import ACDCDataset
 from acdc_train_test.utils import test_single_volume
 #from networks.vit_seg_modeling import VisionTransformer as ViT_seg
 #from networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
-from networks.SwinUMamba import get_swin_umamba_from_plans
+from model.LFLE import get_lfle_umamba_from_plans
 parser = argparse.ArgumentParser()
 parser.add_argument('--volume_path', type=str,
                     default='../ACDC/test', help='root dir for validation volume data')  # for acdc volume_path=root_dir
