@@ -19,7 +19,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from synapse_train_test.datasets.dataset_synapse import Synapse_dataset
-from synapse_train_test.networks.bra_unet import BRAUnet
+from model.LFLE.get_lfle_umamba_from_plans import LFLEUMamba
 from utils import test_single_volume
 
 parser = argparse.ArgumentParser()
