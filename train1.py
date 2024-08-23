@@ -26,7 +26,7 @@ from isic_train_test.loss import *
 
 
 #from networks.bra_unet import BRAUnet
-from model.SwinUMambaD import get_swin_umamba_d_from_plans
+from model.LFLE import get_lfle_umamba_from_plans
 def get_train_transform():
     return A.Compose(
         [
