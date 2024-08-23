@@ -22,7 +22,7 @@ import cv2
 import random
 import os
 from networks.bra_unet import BRAUnet
-from model.LFEM import get_lfle_umamba_from_plans
+from model.LFLE import get_lfle_umamba_from_plans
 class IoU(nn.Module):
     def __init__(self, weight=None, size_average=True):
         super(IoU, self).__init__()
