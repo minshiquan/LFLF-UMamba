@@ -16,7 +16,7 @@ import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 from networks.bra_unet import BRAUnet
-from model.LFEM import get_swin_umamba_from_plans
+from model.LFEM import get_lfle_umamba_from_plans
 from synapse_train_test.trainer import trainer_synapse
 
 warnings.filterwarnings("ignore")
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     args.list_dir = dataset_config[dataset_name]["list_dir"]
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
-    net = get_swin_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1)
+    net = get_lfle_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1)
     net = net.cuda()
     #net = BRAUnet(img_size=224,in_chans=3, num_classes=9, n_win=7).cuda(0)
     #net.load_from()
