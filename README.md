@@ -13,5 +13,5 @@ regions’ local features. These two modules effectively improve
 our network’s ability to capture local information and fuse
 global semantic information.
 
-![LFLE-UMamba](fig1.png)
+![LFLE-UMamba](fig.png)
 
