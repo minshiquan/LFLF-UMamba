@@ -16,7 +16,7 @@ import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 from networks.bra_unet import BRAUnet
-from model.LFEM import get_lfle_umamba_from_plans
+from model.LFLE import get_lfle_umamba_from_plans
 from synapse_train_test.trainer import trainer_synapse
 
 warnings.filterwarnings("ignore")
