@@ -118,7 +118,7 @@ if __name__ == "__main__":
     args.list_dir = dataset_config[dataset_name]["list_dir"]
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
-    net = get_lfle_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1)
+    net = get_lfle_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1, out_chans=9)
     net = net.cuda()
     #net = BRAUnet(img_size=224,in_chans=3, num_classes=9, n_win=7).cuda(0)
     #net.load_from()
