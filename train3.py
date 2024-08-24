@@ -13,7 +13,7 @@ import torch.backends.cudnn as cudnn
 #from networks.vit_seg_modeling import VisionTransformer as ViT_seg
 #from networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
 #from networks.bra_unet import BRAUnet
-from model.LFEM import get_swin_umamba_from_plans
+from model.LFLE import get_lfle_umamba_from_plans
 from acdc_train_test.trainer import trainer_synapse
 
 parser = argparse.ArgumentParser()
