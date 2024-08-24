@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
     dataloaders = {'train': train_loader, 'valid': val_loader}
 
-    model_ft = get_swin_umamba_d_from_plans(plans_manager={},dataset_json={}, configuration_manager={}, num_input_channels=3)
+    model_ft = get_lfle_umamba_from_plans(plans_manager={},dataset_json={}, configuration_manager={}, num_input_channels=3)
     
     model_ft = model_ft.cuda() 
     #model_ft.load_from()
