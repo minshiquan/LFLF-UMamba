@@ -102,7 +102,7 @@ if __name__ == "__main__":
     #net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
     #net.load_from(weights=np.load(config_vit.pretrained_path))
     #net = BRAUnet(img_size=224, in_chans=3, num_classes=4,n_win=7)
-    net = get_swin_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1) 
+    net = get_lfle_umamba_from_plans(plans_manager={},dataset_json={},configuration_manager={},num_input_channels=1) 
     net = net.cuda() 
     #net.load_from()
     trainer = {'ACDC': trainer_synapse, 'Synapse': trainer_synapse}
